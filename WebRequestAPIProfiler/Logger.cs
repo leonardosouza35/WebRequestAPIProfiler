@@ -9,20 +9,17 @@ namespace WebRequestAPIProfiler.Log
         private static readonly ILog log = LogManager.GetLogger(typeof(Program));
 
         public static void Info(string message)
-        {
-            System.Console.WriteLine(message);            
+        {            
             log.Info(message);
         }
 
         public static void Error(string message)
-        {
-            System.Console.WriteLine(message);
+        {            
             log.Error(message);
         }
 
         public static void Warn(string message)
-        {
-            System.Console.WriteLine(message);
+        {            
             log.Warn(message);
         }
 

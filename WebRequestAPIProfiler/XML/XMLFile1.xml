@@ -1,0 +1,41 @@
+﻿<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <soap:Body>
+    <CreateNewOrderResponse xmlns="http://mts.geobridge.org/">
+      <CreateNewOrderResult>
+        <NewOrderResponse xmlns="">
+          <AgentOrderReference>4366182143299342</AgentOrderReference>
+          <OrderID>2828837852</OrderID>
+          <OrderProcessingTime>2018-10-18T19:35:19.6181612-03:00</OrderProcessingTime>
+          <NetAmountSent>1488665,94</NetAmountSent>
+          <TotalFeeSender>0,00</TotalFeeSender>
+          <ExchangeRateSender>3,6880</ExchangeRateSender>
+          <CurrencySent>USD</CurrencySent>
+          <ExchangeRateAgent>3,6880</ExchangeRateAgent>
+          <TotalFeeAgent>0,00</TotalFeeAgent>
+          <TotalDueFromAgent>1488665,94</TotalDueFromAgent>
+          <AmountReceived>5490200,00</AmountReceived>
+          <TotalRecipiententFee>0.00</TotalRecipiententFee>
+          <TotalPaidToRecipient>5490200,00</TotalPaidToRecipient>
+          <CurrencyOfPayment>BRL</CurrencyOfPayment>
+          <CurrencyOfPaymentID>2</CurrencyOfPaymentID>
+          <PaymentInstructions/>
+          <TypeOfPaymentID>31</TypeOfPaymentID>
+          <OrderAcceptanceCode>A</OrderAcceptanceCode>
+          <OrderClaimCode/>
+          <TransactionResult/>
+          <ResultCodes>1001</ResultCodes>
+          <AdditionalMessage/>
+          <StatusCode>3</StatusCode>
+          <SenderUID>800906778</SenderUID>
+          <SenderLastName/>
+          <SenderFirstName/>
+          <SenderCompanyName>Airbnb</SenderCompanyName>
+          <RecipientBillerAccountNo>801058732</RecipientBillerAccountNo>
+          <RecipientLastName/>
+          <RecipientFirstName>Maria Alda Lopes</RecipientFirstName>
+          <RecipientCompany/>
+        </NewOrderResponse>
+      </CreateNewOrderResult>
+    </CreateNewOrderResponse>
+  </soap:Body>
+</soap:Envelope>

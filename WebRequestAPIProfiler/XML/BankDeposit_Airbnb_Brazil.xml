@@ -1,0 +1,92 @@
+﻿<s:Envelope xmlns:s="http://schemas.xmlsoap.org/soap/envelope/">
+  <s:Header>
+    <h:AuthHeader xmlns:h="http://mts.geobridge.org/" xmlns="http://mts.geobridge.org/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <UserName>pay0102ausr</UserName>
+      <Password>yHp37mQQ!8</Password>
+      <!--<Password>yHp37mQQ8</Password>-->
+    </h:AuthHeader>
+  </s:Header>
+  <s:Body xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <CreateNewOrder xmlns="http://mts.geobridge.org/">
+      <AgentID>3091</AgentID>
+      <PartnerID>2271</PartnerID>
+      <AgentOrderReference>4366182143299342</AgentOrderReference>
+      <OrderCreationTime />
+      <SenderUID />
+      <SenderLastName />
+      <SenderFirstName />
+      <SenderCompanyName>Airbnb</SenderCompanyName>
+      <SenderAddress />
+      <SenderCity />
+      <SenderState />
+      <SenderZip />
+      <SenderCountry>US</SenderCountry>
+      <SenderPhone1 />
+      <SenderPhone2 />
+      <SenderEmail />
+      <SenderDateOfBirth />
+      <SenderDocument1Type />
+      <SenderDocument1Issue />
+      <SenderDocument1Number>100035310</SenderDocument1Number>
+      <SenderDocument2Type />
+      <SenderDocument2Issue />
+      <SenderDocument2Number>888 Brannan </SenderDocument2Number>
+      <RecipientUID />
+      <RecipientLastName />
+      <RecipientFirstName>Maria Alda Lopes</RecipientFirstName>
+      <RecipientCompany />
+      <RecipientAddress1 />
+      <RecipientCity />
+      <RecipientState />
+      <RecipientZip />
+      <RecipientCountry>BR</RecipientCountry>
+      <RecipientPhone1>5511953687988</RecipientPhone1>
+      <RecipientPhone2 />
+      <RecipientEmail />
+      <RecipientDocument1Type />
+      <RecipientDocument1Issuer />
+      <RecipientDocument1Number />
+      <RecipientDocument2Type />
+      <RecipientDocument2Issuer />
+      <RecipientDocument2Number />
+      <RecipientBankName>Banco do Brasil</RecipientBankName>
+      <RecipientBankRouting>001</RecipientBankRouting>
+      <RecipientBranchID>12459</RecipientBranchID>
+      <RecipientBankAccountNo>710725</RecipientBankAccountNo>
+      <RecipientBankAccountID />
+      <RecipientTIN>19462514453</RecipientTIN>
+      <RecipientBankAccoutType>savings</RecipientBankAccoutType>
+      <NetAmountSent />
+      <TotalFeeSender />
+      <TotalCollectedFromSender />
+      <ExchangeRateSender />
+      <CurrencySent>USD</CurrencySent>
+      <ExchangeRateAgent />
+      <TotalFeeAgent />
+      <TotalDueFromAgent />
+      <AmountReceived>549.0200</AmountReceived>
+      <TotalRecipiententFee />
+      <TotalPaidToRecipient />
+      <CurrencyOfPayment>BRL</CurrencyOfPayment>
+      <CurrencyOfPaymentID />
+      <ChallengeQuestion />
+      <ChallengeAnswer />
+      <PayLocationID />
+      <PaymentLocation />
+      <MessageToRecipient />
+      <PaymentInstructions />
+      <TypeOfPaymentText />
+      <TypeOfPaymentID>31</TypeOfPaymentID>
+      <OrderClaimCode />
+      <Custom1 />
+      <Custom2 />
+      <Custom3 />
+      <Custom4 />
+      <SenderOccupation />
+      <RelationshipToSender />
+      <PurposeOfOrder />
+      <OrderFundSource />
+      <OrderCardSurcharge />
+    </CreateNewOrder>
+  </s:Body>
+</s:Envelope>

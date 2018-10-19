@@ -48,18 +48,31 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Models\CreateNewOrderResponse.cs" />
+    <Compile Include="Models\NewOrderResponse.cs" />
+    <Compile Include="Models\CreateNewOrderResult.cs" />
     <Compile Include="Logger.cs" />
+    <Compile Include="Models\Error.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="WebRequestProfiler.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="XML\test.xml" />
+    <Content Include="XML\XMLFile1.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="XML\XMLFile2.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="XML\BankDeposit_Airbnb_Brazil.xml" />
     <None Include="App.config" />
     <Content Include="log4net.config.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
