@@ -17,26 +17,30 @@ namespace WebRequestAPIProfiler
     {
         static Stopwatch stopWatch = new Stopwatch();
         public static void Init()
-        {
+        {            
             
-            var xmlPath = File.ReadAllText(ConfigurationManager.AppSettings["XMLFilePath"]);
-
-            var xmlRequest = ConfigurationManager.AppSettings["RequestURL"];
-
-            byte[] bytes = Encoding.ASCII.GetBytes(xmlPath);
-
             var timesToRun = int.Parse(ConfigurationManager.AppSettings["timesToRun"]);
+
             Logger.Info($"Number of times to make request = {timesToRun}");
 
-            PostXML(bytes, xmlRequest, timesToRun);
-            
+            var urlRequest = ConfigurationManager.AppSettings["RequestURL"];
+
+            PostXML(urlRequest, timesToRun);
+
         }
 
-        public static void PostXML(byte[] bytesXml, string xmlRequest, int timesToRun)
+       
+        public static void PostXML(string urlRequest, int timesToRun)
         {            
             for (int i = 1; i <= timesToRun; i++)
             {
-                InnerPost(bytesXml, xmlRequest, i);
+                IncrementAgentReference();
+
+                var xmlContent = File.ReadAllText(ConfigurationManager.AppSettings["XMLFilePath"]);                
+
+                byte[] bytes = Encoding.ASCII.GetBytes(xmlContent);
+
+                InnerPost(bytes, urlRequest, i);
             }
          
         }
@@ -72,25 +76,22 @@ namespace WebRequestAPIProfiler
         {
             string message = string.Empty;
             if (orderResponse.HasError)
-            {
-                Logger.Info($"Finished requesting in attempt -> {attemptCount} with ERROR");
+            {                
                 message = $"{Environment.NewLine}";
+                message += $"Finished requesting in attempt -> {attemptCount} with ERROR { Environment.NewLine}";
                 message += $"Finished in {stopWatch.Elapsed}{Environment.NewLine}";
                 message += $"With the following details: {Environment.NewLine}";
                 message += $"ResultCodes: { orderResponse.CreateNewOrderResult.Error.ResultCodes}{Environment.NewLine}";
-                message += $"ResultMessage: { orderResponse.CreateNewOrderResult.Error.ResultMessage}{Environment.NewLine}";
+                message += $"ResultMessage: { orderResponse.CreateNewOrderResult.Error.ResultMessage}{Environment.NewLine}";                
                 message += $"{Environment.NewLine}";
                 Logger.Error(message);                
             }
             else
             {
                 Logger.Info($"Finished requesting in attempt -> {attemptCount} with NO ERROR");
-                message = $"{Environment.NewLine}";
-                message += $"Finished in {stopWatch.Elapsed}{Environment.NewLine}";
-                message += $"With the following details: {Environment.NewLine}";
-                message += $"OrderID: { orderResponse.CreateNewOrderResult.NewOrderResponse.OrderID}{Environment.NewLine}";
-                message += $"{Environment.NewLine}";
-                Logger.Info(message);
+                Logger.Info($"Finished in { stopWatch.Elapsed}");
+                Logger.Info($"With the following details...");
+                Logger.Info($"OrderID: { orderResponse.CreateNewOrderResult.NewOrderResponse.OrderID}");                                
             }
         }
 
@@ -112,6 +113,30 @@ namespace WebRequestAPIProfiler
                     return (CreateNewOrderResponse)serializer.Deserialize(xmlReader);                    
                 }
             }            
+        }
+
+        private static void IncrementAgentReference()
+        {
+            var xdoc = XDocument.Load(ConfigurationManager.AppSettings["XMLFilePath"]);            
+            var elements = xdoc.Root.Elements();
+            foreach (var element in elements)
+            {
+                if (element.Name.LocalName == "Body")
+                {
+                    var bodyElements = element.Elements();
+                    foreach (var bodyElement in bodyElements)
+                    {
+                        if (bodyElement.Name.LocalName == "CreateNewOrder")
+                        {
+                            var agentElement = bodyElement.Elements().Where(i => i.Name.LocalName == "AgentOrderReference").Single();
+                            agentElement.Value = (Convert.ToInt64(agentElement.Value) + 1).ToString();
+
+                        }
+                    }
+                }
+
+            }
+            xdoc.Save(ConfigurationManager.AppSettings["XMLFilePath"]);
         }
     }
 }

@@ -5,8 +5,13 @@ namespace WebRequestAPIProfiler.Models
     [XmlRoot("")]
     public class NewOrderResponse
     {
+        
+
         [XmlElement(Namespace = "")]
         public long OrderID { get; set; }
+
+        [XmlElement(Namespace = "")]
+        public long AgentOrderReference { get; set; }
 
         [XmlElement(Namespace = "")]
         public string RecipientFirstName { get; set; }

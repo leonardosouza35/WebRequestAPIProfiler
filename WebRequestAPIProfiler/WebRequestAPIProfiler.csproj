@@ -58,15 +58,21 @@
     <Compile Include="WebRequestProfiler.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="XML\test.xml" />
+    <Content Include="XML\test.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="XML\XMLFile1.xml">
       <SubType>Designer</SubType>
     </Content>
     <Content Include="XML\XMLFile2.xml">
       <SubType>Designer</SubType>
     </Content>
-    <Content Include="XML\BankDeposit_Airbnb_Brazil.xml" />
-    <None Include="App.config" />
+    <Content Include="XML\BankDeposit_Airbnb_Brazil.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
     <Content Include="log4net.config.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>

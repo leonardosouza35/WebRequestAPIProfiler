@@ -1,16 +1,17 @@
-﻿<s:Envelope xmlns:s="http://schemas.xmlsoap.org/soap/envelope/">
+﻿<?xml version="1.0" encoding="utf-8"?>
+<s:Envelope xmlns:s="http://schemas.xmlsoap.org/soap/envelope/">
   <s:Header>
-    <h:AuthHeader xmlns:h="http://mts.geobridge.org/" xmlns="http://mts.geobridge.org/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <AuthHeader xmlns:h="http://mts.geobridge.org/" xmlns="http://mts.geobridge.org/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
       <UserName>pay0102ausr</UserName>
-      <Password>yHp37mQQ!8</Password>
-      <!--<Password>yHp37mQQ8</Password>-->
-    </h:AuthHeader>
+      <!--<Password>yHp37mQQ!8</Password>-->
+      <Password>yHp37mQQ8</Password>
+    </AuthHeader>
   </s:Header>
   <s:Body xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
     <CreateNewOrder xmlns="http://mts.geobridge.org/">
       <AgentID>3091</AgentID>
       <PartnerID>2271</PartnerID>
-      <AgentOrderReference>4366182143299342</AgentOrderReference>
+      <AgentOrderReference>4366182143299665</AgentOrderReference>
       <OrderCreationTime />
       <SenderUID />
       <SenderLastName />
