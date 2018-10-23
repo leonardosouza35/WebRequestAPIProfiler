@@ -1,0 +1,1296 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://mts.geobridge.org/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://mts.geobridge.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://mts.geobridge.org/">
+      <s:element name="GetTypesOfPayment">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AgentID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="PartnerID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="SenderCountry" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="RecipientCountry" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetTypesOfPaymentResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetTypesOfPaymentResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AuthHeader" type="tns:AuthHeader" />
+      <s:complexType name="AuthHeader">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="UserName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Password" type="s:string" />
+        </s:sequence>
+        <s:anyAttribute />
+      </s:complexType>
+      <s:element name="GetErrorList">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetErrorListResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetErrorListResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CreateNewOrder">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AgentID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="PartnerID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="AgentOrderReference" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="OrderCreationTime" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="SenderUID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="SenderLastName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="SenderFirstName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="SenderCompanyName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="SenderAddress" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="SenderCity" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="SenderState" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="SenderZip" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="SenderCountry" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="SenderPhone1" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="SenderPhone2" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="SenderEmail" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="SenderDateOfBirth" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="SenderDocument1Type" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="SenderDocument1Issue" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="SenderDocument1Number" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="SenderDocument2Type" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="SenderDocument2Issue" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="SenderDocument2Number" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="SenderGender" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="SenderNationality" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="RecipientUID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="RecipientLastName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="RecipientFirstName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="RecipientCompany" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="RecipientAddress1" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="RecipientCity" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="RecipientState" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="RecipientZip" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="RecipientCountry" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="RecipientPhone1" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="RecipientPhone2" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="RecipientEmail" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="RecipientDocument1Type" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="RecipientDocument1Issuer" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="RecipientDocument1Number" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="RecipientDocument2Type" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="RecipientDocument2Issuer" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="RecipientDocument2Number" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="RecipientBankName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="RecipientBankRouting" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="RecipientBranchID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="RecipientBankAccountNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="RecipientBankAccountID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="RecipientBankAddress" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="RecipientTIN" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="RecipientBankAccoutType" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="NetAmountSent" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="TotalFeeSender" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="TotalCollectedFromSender" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ExchangeRateSender" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="CurrencySent" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ExchangeRateAgent" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="TotalFeeAgent" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="TotalDueFromAgent" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="AmountReceived" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="TotalRecipiententFee" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="TotalPaidToRecipient" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="CurrencyOfPayment" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="CurrencyOfPaymentID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ChallengeQuestion" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ChallengeAnswer" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="PayLocationID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="PaymentLocation" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="MessageToRecipient" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="PaymentInstructions" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="TypeOfPaymentText" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="TypeOfPaymentID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="OrderClaimCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Custom1" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Custom2" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Custom3" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Custom4" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="SenderOccupation" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="RelationshipToSender" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="PurposeOfOrder" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="OrderFundSource" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="OrderCardSurcharge" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="AdditionalChargesDiscounts" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ChargesDiscountsDescription" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CreateNewOrderResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CreateNewOrderResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CreateNewPayment">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AgentID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="PartnerID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="AgentOrderReference" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="OrderCreationTime" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="SenderUID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="SenderLastName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="SenderFirstName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="SenderCompanyName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="SenderAddress" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="SenderCity" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="SenderState" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="SenderZip" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="SenderCountry" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="SenderPhone1" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="SenderPhone2" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="SenderEmail" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="SenderDateOfBirth" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="SenderDocument1Type" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="SenderDocument1Issue" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="SenderDocument1Number" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="SenderDocument2Type" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="SenderDocument2Issue" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="SenderDocument2Number" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="SenderGender" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="SenderNationality" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="RecipientUID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="RecipientLastName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="RecipientFirstName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="RecipientCompany" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="RecipientAddress1" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="RecipientCity" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="RecipientState" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="RecipientZip" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="RecipientCountry" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="RecipientPhone1" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="RecipientPhone2" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="RecipientEmail" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="RecipientDocument1Type" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="RecipientDocument1Issuer" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="RecipientDocument1Number" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="RecipientDocument2Type" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="RecipientDocument2Issuer" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="RecipientDocument2Number" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="RecipientBillType" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="RecipientBillerName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="RecipientBillerCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="RecipientBillerAccountNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="RecipientBillerUserName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="RecipientBillerPassword" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="RecipientBillerAccountID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="RecipientTIN" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="NetAmountSent" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="TotalFeeSender" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="TotalCollectedFromSender" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ExchangeRateSender" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="CurrencySent" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ExchangeRateAgent" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="TotalFeeAgent" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="TotalDueFromAgent" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="AmountReceived" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="TotalRecipiententFee" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="TotalPaidToRecipient" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="CurrencyOfPayment" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="CurrencyOfPaymentID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ChallengeQuestion" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ChallengeAnswer" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="PayLocationID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="PaymentLocation" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="MessageToRecipient" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="PaymentInstructions" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="TypeOfPaymentText" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="TypeOfPaymentID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="OrderClaimCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Custom1" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Custom2" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Custom3" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Custom4" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="SenderOccupation" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="RelationshipToSender" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="PurposeOfOrder" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="OrderFundSource" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="OrderCardSurcharge" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CreateNewPaymentResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CreateNewPaymentResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetRatesAndCosts">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AgentID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="PartnerID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="SenderCountry" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="RecipientCountry" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="NetAmountSent" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="CurrencySent" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="AmountReceived" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="CurrencyOfPayment" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="CurrencyOfPaymentID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="PayLocationID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="PaymentLocation" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="TypeOfPaymentText" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="TypeOfPaymentID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetRatesAndCostsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetRatesAndCostsResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetPaymentLocations">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AgentID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="PartnerID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="CurrencyOfPaymentID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="TypeOfPaymentID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetPaymentLocationsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetPaymentLocationsResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetOrderDetails">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AgentID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="PartnerID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="AgentOrderReference" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="OrderId" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetOrderDetailsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetOrderDetailsResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetCancelationByCancelDate">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AgentID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="PartnerID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="CanceledDate" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetCancelationByCancelDateResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetCancelationByCancelDateResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetClientAccountChangesByDate">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AgentID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="PartnerID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="InitialDate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="EndDate" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetClientAccountChangesByDateResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetClientAccountChangesByDateResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetCurrencyTypesOfPayment">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AgentID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="PartnerID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="SenderCountry" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="RecipientCountry" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetCurrencyTypesOfPaymentResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetCurrencyTypesOfPaymentResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateOrder">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AgentID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="PartnerID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="AgentOrderReference" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="OrderCreationTime" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="SenderUID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="SenderLastName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="SenderFirstName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="SenderCompanyName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="SenderAddress" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="SenderCity" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="SenderState" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="SenderZip" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="SenderCountry" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="SenderPhone1" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="SenderPhone2" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="SenderEmail" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="SenderDateOfBirth" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="SenderDocument1Type" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="SenderDocument1Issue" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="SenderDocument1Number" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="SenderDocument2Type" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="SenderDocument2Issue" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="SenderDocument2Number" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="RecipientUID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="RecipientLastName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="RecipientFirstName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="RecipientCompany" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="RecipientAddress1" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="RecipientCity" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="RecipientState" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="RecipientZip" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="RecipientCountry" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="RecipientPhone1" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="RecipientPhone2" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="RecipientEmail" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="RecipientDocument1Type" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="RecipientDocument1Issuer" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="RecipientDocument1Number" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="RecipientDocument2Type" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="RecipientDocument2Issuer" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="RecipientDocument2Number" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="RecipientBankName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="RecipientBankRouting" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="RecipientBranchID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="RecipientBankAccountNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="RecipientBankAccountID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="RecipientTIN" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="RecipientBankAccoutType" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="NetAmountSent" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="TotalFeeSender" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="TotalCollectedFromSender" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ExchangeRateSender" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="CurrencySent" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ExchangeRateAgent" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="TotalFeeAgent" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="TotalDueFromAgent" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="AmountReceived" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="TotalRecipiententFee" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="TotalPaidToRecipient" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="CurrencyOfPayment" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="CurrencyOfPaymentID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ChallengeQuestion" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ChallengeAnswer" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="PayLocationID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="PaymentLocation" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="MessageToRecipient" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="PaymentInstructions" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="TypeOfPaymentText" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="TypeOfPaymentID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="OrderClaimCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Custom1" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Custom2" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Custom3" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Custom4" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateOrderResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UpdateOrderResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetCurrenciesOfPayment">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AgentID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="PartnerID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="SenderCountry" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="RecipientCountry" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetCurrenciesOfPaymentResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetCurrenciesOfPaymentResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ValidateBillPayment">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AgentID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="PartnerID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="SenderCountry" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="RecipientLastName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="RecipientFirstName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="RecipientCompany" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="RecipientCountry" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="RecipientBillType" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="RecipientBillerName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="RecipientBillerCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="RecipientBillerAccountNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="RecipientBillerUserName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="RecipientBillerPassword" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="RecipientTIN" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="NetAmountSent" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="BillDueDate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ExchangeRateSender" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="CurrencySent" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="TotalPaidToBiller" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="CurrencyOfPayment" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="TypeOfPaymentID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ValidateBillPaymentResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ValidateBillPaymentResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetOrderStatus">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AgentID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="PartnerID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="AgentOrderReference" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="OrderID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetOrderStatusResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetOrderStatusResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetPdfPaymentReceipt">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="OrderID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetPdfPaymentReceiptResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetPdfPaymentReceiptResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetActiveCountries">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AgentID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="PartnerID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="SenderCountry" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetActiveCountriesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetActiveCountriesResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetPartnerBalance">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AgentID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="PartnerID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetPartnerBalanceResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetPartnerBalanceResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetPaymentsByDate">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AgentID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="PartnerID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="PaymentConfirmationDate" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetPaymentsByDateResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetPaymentsByDateResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="GetTypesOfPaymentSoapIn">
+    <wsdl:part name="parameters" element="tns:GetTypesOfPayment" />
+  </wsdl:message>
+  <wsdl:message name="GetTypesOfPaymentSoapOut">
+    <wsdl:part name="parameters" element="tns:GetTypesOfPaymentResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetTypesOfPaymentAuthHeader">
+    <wsdl:part name="AuthHeader" element="tns:AuthHeader" />
+  </wsdl:message>
+  <wsdl:message name="GetErrorListSoapIn">
+    <wsdl:part name="parameters" element="tns:GetErrorList" />
+  </wsdl:message>
+  <wsdl:message name="GetErrorListSoapOut">
+    <wsdl:part name="parameters" element="tns:GetErrorListResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetErrorListAuthHeader">
+    <wsdl:part name="AuthHeader" element="tns:AuthHeader" />
+  </wsdl:message>
+  <wsdl:message name="CreateNewOrderSoapIn">
+    <wsdl:part name="parameters" element="tns:CreateNewOrder" />
+  </wsdl:message>
+  <wsdl:message name="CreateNewOrderSoapOut">
+    <wsdl:part name="parameters" element="tns:CreateNewOrderResponse" />
+  </wsdl:message>
+  <wsdl:message name="CreateNewOrderAuthHeader">
+    <wsdl:part name="AuthHeader" element="tns:AuthHeader" />
+  </wsdl:message>
+  <wsdl:message name="CreateNewPaymentSoapIn">
+    <wsdl:part name="parameters" element="tns:CreateNewPayment" />
+  </wsdl:message>
+  <wsdl:message name="CreateNewPaymentSoapOut">
+    <wsdl:part name="parameters" element="tns:CreateNewPaymentResponse" />
+  </wsdl:message>
+  <wsdl:message name="CreateNewPaymentAuthHeader">
+    <wsdl:part name="AuthHeader" element="tns:AuthHeader" />
+  </wsdl:message>
+  <wsdl:message name="GetRatesAndCostsSoapIn">
+    <wsdl:part name="parameters" element="tns:GetRatesAndCosts" />
+  </wsdl:message>
+  <wsdl:message name="GetRatesAndCostsSoapOut">
+    <wsdl:part name="parameters" element="tns:GetRatesAndCostsResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetRatesAndCostsAuthHeader">
+    <wsdl:part name="AuthHeader" element="tns:AuthHeader" />
+  </wsdl:message>
+  <wsdl:message name="GetPaymentLocationsSoapIn">
+    <wsdl:part name="parameters" element="tns:GetPaymentLocations" />
+  </wsdl:message>
+  <wsdl:message name="GetPaymentLocationsSoapOut">
+    <wsdl:part name="parameters" element="tns:GetPaymentLocationsResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetPaymentLocationsAuthHeader">
+    <wsdl:part name="AuthHeader" element="tns:AuthHeader" />
+  </wsdl:message>
+  <wsdl:message name="GetOrderDetailsSoapIn">
+    <wsdl:part name="parameters" element="tns:GetOrderDetails" />
+  </wsdl:message>
+  <wsdl:message name="GetOrderDetailsSoapOut">
+    <wsdl:part name="parameters" element="tns:GetOrderDetailsResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetOrderDetailsAuthHeader">
+    <wsdl:part name="AuthHeader" element="tns:AuthHeader" />
+  </wsdl:message>
+  <wsdl:message name="GetCancelationByCancelDateSoapIn">
+    <wsdl:part name="parameters" element="tns:GetCancelationByCancelDate" />
+  </wsdl:message>
+  <wsdl:message name="GetCancelationByCancelDateSoapOut">
+    <wsdl:part name="parameters" element="tns:GetCancelationByCancelDateResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetCancelationByCancelDateAuthHeader">
+    <wsdl:part name="AuthHeader" element="tns:AuthHeader" />
+  </wsdl:message>
+  <wsdl:message name="GetClientAccountChangesByDateSoapIn">
+    <wsdl:part name="parameters" element="tns:GetClientAccountChangesByDate" />
+  </wsdl:message>
+  <wsdl:message name="GetClientAccountChangesByDateSoapOut">
+    <wsdl:part name="parameters" element="tns:GetClientAccountChangesByDateResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetClientAccountChangesByDateAuthHeader">
+    <wsdl:part name="AuthHeader" element="tns:AuthHeader" />
+  </wsdl:message>
+  <wsdl:message name="GetCurrencyTypesOfPaymentSoapIn">
+    <wsdl:part name="parameters" element="tns:GetCurrencyTypesOfPayment" />
+  </wsdl:message>
+  <wsdl:message name="GetCurrencyTypesOfPaymentSoapOut">
+    <wsdl:part name="parameters" element="tns:GetCurrencyTypesOfPaymentResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetCurrencyTypesOfPaymentAuthHeader">
+    <wsdl:part name="AuthHeader" element="tns:AuthHeader" />
+  </wsdl:message>
+  <wsdl:message name="UpdateOrderSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateOrder" />
+  </wsdl:message>
+  <wsdl:message name="UpdateOrderSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateOrderResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateOrderAuthHeader">
+    <wsdl:part name="AuthHeader" element="tns:AuthHeader" />
+  </wsdl:message>
+  <wsdl:message name="GetCurrenciesOfPaymentSoapIn">
+    <wsdl:part name="parameters" element="tns:GetCurrenciesOfPayment" />
+  </wsdl:message>
+  <wsdl:message name="GetCurrenciesOfPaymentSoapOut">
+    <wsdl:part name="parameters" element="tns:GetCurrenciesOfPaymentResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetCurrenciesOfPaymentAuthHeader">
+    <wsdl:part name="AuthHeader" element="tns:AuthHeader" />
+  </wsdl:message>
+  <wsdl:message name="ValidateBillPaymentSoapIn">
+    <wsdl:part name="parameters" element="tns:ValidateBillPayment" />
+  </wsdl:message>
+  <wsdl:message name="ValidateBillPaymentSoapOut">
+    <wsdl:part name="parameters" element="tns:ValidateBillPaymentResponse" />
+  </wsdl:message>
+  <wsdl:message name="ValidateBillPaymentAuthHeader">
+    <wsdl:part name="AuthHeader" element="tns:AuthHeader" />
+  </wsdl:message>
+  <wsdl:message name="GetOrderStatusSoapIn">
+    <wsdl:part name="parameters" element="tns:GetOrderStatus" />
+  </wsdl:message>
+  <wsdl:message name="GetOrderStatusSoapOut">
+    <wsdl:part name="parameters" element="tns:GetOrderStatusResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetOrderStatusAuthHeader">
+    <wsdl:part name="AuthHeader" element="tns:AuthHeader" />
+  </wsdl:message>
+  <wsdl:message name="GetPdfPaymentReceiptSoapIn">
+    <wsdl:part name="parameters" element="tns:GetPdfPaymentReceipt" />
+  </wsdl:message>
+  <wsdl:message name="GetPdfPaymentReceiptSoapOut">
+    <wsdl:part name="parameters" element="tns:GetPdfPaymentReceiptResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetPdfPaymentReceiptAuthHeader">
+    <wsdl:part name="AuthHeader" element="tns:AuthHeader" />
+  </wsdl:message>
+  <wsdl:message name="GetActiveCountriesSoapIn">
+    <wsdl:part name="parameters" element="tns:GetActiveCountries" />
+  </wsdl:message>
+  <wsdl:message name="GetActiveCountriesSoapOut">
+    <wsdl:part name="parameters" element="tns:GetActiveCountriesResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetActiveCountriesAuthHeader">
+    <wsdl:part name="AuthHeader" element="tns:AuthHeader" />
+  </wsdl:message>
+  <wsdl:message name="GetPartnerBalanceSoapIn">
+    <wsdl:part name="parameters" element="tns:GetPartnerBalance" />
+  </wsdl:message>
+  <wsdl:message name="GetPartnerBalanceSoapOut">
+    <wsdl:part name="parameters" element="tns:GetPartnerBalanceResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetPartnerBalanceAuthHeader">
+    <wsdl:part name="AuthHeader" element="tns:AuthHeader" />
+  </wsdl:message>
+  <wsdl:message name="GetPaymentsByDateSoapIn">
+    <wsdl:part name="parameters" element="tns:GetPaymentsByDate" />
+  </wsdl:message>
+  <wsdl:message name="GetPaymentsByDateSoapOut">
+    <wsdl:part name="parameters" element="tns:GetPaymentsByDateResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetPaymentsByDateAuthHeader">
+    <wsdl:part name="AuthHeader" element="tns:AuthHeader" />
+  </wsdl:message>
+  <wsdl:portType name="mtsSoap">
+    <wsdl:operation name="GetTypesOfPayment">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Provides Types of payment in a given Country</wsdl:documentation>
+      <wsdl:input message="tns:GetTypesOfPaymentSoapIn" />
+      <wsdl:output message="tns:GetTypesOfPaymentSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetErrorList">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Provides Textual descriptions for error codes given by the API</wsdl:documentation>
+      <wsdl:input message="tns:GetErrorListSoapIn" />
+      <wsdl:output message="tns:GetErrorListSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateNewOrder">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Create New Order</wsdl:documentation>
+      <wsdl:input message="tns:CreateNewOrderSoapIn" />
+      <wsdl:output message="tns:CreateNewOrderSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateNewPayment">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Create New Payment</wsdl:documentation>
+      <wsdl:input message="tns:CreateNewPaymentSoapIn" />
+      <wsdl:output message="tns:CreateNewPaymentSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRatesAndCosts">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Provide exchange rates and additional costs for remitances given a number of parameters</wsdl:documentation>
+      <wsdl:input message="tns:GetRatesAndCostsSoapIn" />
+      <wsdl:output message="tns:GetRatesAndCostsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPaymentLocations">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Provide payment locations for given currencies and types of payment in a specific Country.</wsdl:documentation>
+      <wsdl:input message="tns:GetPaymentLocationsSoapIn" />
+      <wsdl:output message="tns:GetPaymentLocationsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetOrderDetails">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Provides details for a given order</wsdl:documentation>
+      <wsdl:input message="tns:GetOrderDetailsSoapIn" />
+      <wsdl:output message="tns:GetOrderDetailsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCancelationByCancelDate">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Provides orders canceled for a given date</wsdl:documentation>
+      <wsdl:input message="tns:GetCancelationByCancelDateSoapIn" />
+      <wsdl:output message="tns:GetCancelationByCancelDateSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetClientAccountChangesByDate">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">retrieve a list of updates to recipients bank accounts made by the banks or Pontual in order to correct missing or incorrect information</wsdl:documentation>
+      <wsdl:input message="tns:GetClientAccountChangesByDateSoapIn" />
+      <wsdl:output message="tns:GetClientAccountChangesByDateSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCurrencyTypesOfPayment">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Provides Types of payment and associated currencies in a given Country</wsdl:documentation>
+      <wsdl:input message="tns:GetCurrencyTypesOfPaymentSoapIn" />
+      <wsdl:output message="tns:GetCurrencyTypesOfPaymentSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateOrder">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Update Order Information</wsdl:documentation>
+      <wsdl:input message="tns:UpdateOrderSoapIn" />
+      <wsdl:output message="tns:UpdateOrderSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCurrenciesOfPayment">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Provides Currencies available for payments in a given Country</wsdl:documentation>
+      <wsdl:input message="tns:GetCurrenciesOfPaymentSoapIn" />
+      <wsdl:output message="tns:GetCurrenciesOfPaymentSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ValidateBillPayment">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Validate Bill Payment information</wsdl:documentation>
+      <wsdl:input message="tns:ValidateBillPaymentSoapIn" />
+      <wsdl:output message="tns:ValidateBillPaymentSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetOrderStatus">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Obtain the status of a previously accepted order</wsdl:documentation>
+      <wsdl:input message="tns:GetOrderStatusSoapIn" />
+      <wsdl:output message="tns:GetOrderStatusSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPdfPaymentReceipt">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Provides Payment Receipt PDF</wsdl:documentation>
+      <wsdl:input message="tns:GetPdfPaymentReceiptSoapIn" />
+      <wsdl:output message="tns:GetPdfPaymentReceiptSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetActiveCountries">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Provides Payment Receipt PDF</wsdl:documentation>
+      <wsdl:input message="tns:GetActiveCountriesSoapIn" />
+      <wsdl:output message="tns:GetActiveCountriesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPartnerBalance">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Obtain information about your current financial standing</wsdl:documentation>
+      <wsdl:input message="tns:GetPartnerBalanceSoapIn" />
+      <wsdl:output message="tns:GetPartnerBalanceSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPaymentsByDate">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Provides a list of orders that were confirmed paid to customers on a given date as reported by the final payment agent or network</wsdl:documentation>
+      <wsdl:input message="tns:GetPaymentsByDateSoapIn" />
+      <wsdl:output message="tns:GetPaymentsByDateSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="mtsSoap" type="tns:mtsSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetTypesOfPayment">
+      <soap:operation soapAction="http://mts.geobridge.org/GetTypesOfPayment" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetTypesOfPaymentAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetErrorList">
+      <soap:operation soapAction="http://mts.geobridge.org/GetErrorList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetErrorListAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateNewOrder">
+      <soap:operation soapAction="http://mts.geobridge.org/CreateNewOrder" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:CreateNewOrderAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateNewPayment">
+      <soap:operation soapAction="http://mts.geobridge.org/CreateNewPayment" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:CreateNewPaymentAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRatesAndCosts">
+      <soap:operation soapAction="http://mts.geobridge.org/GetRatesAndCosts" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetRatesAndCostsAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPaymentLocations">
+      <soap:operation soapAction="http://mts.geobridge.org/GetPaymentLocations" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetPaymentLocationsAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetOrderDetails">
+      <soap:operation soapAction="http://mts.geobridge.org/GetOrderDetails" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetOrderDetailsAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCancelationByCancelDate">
+      <soap:operation soapAction="http://mts.geobridge.org/GetCancelationByCancelDate" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetCancelationByCancelDateAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetClientAccountChangesByDate">
+      <soap:operation soapAction="http://mts.geobridge.org/GetClientAccountChangesByDate" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetClientAccountChangesByDateAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCurrencyTypesOfPayment">
+      <soap:operation soapAction="http://mts.geobridge.org/GetCurrencyTypesOfPayment" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetCurrencyTypesOfPaymentAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateOrder">
+      <soap:operation soapAction="http://mts.geobridge.org/UpdateOrder" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:UpdateOrderAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCurrenciesOfPayment">
+      <soap:operation soapAction="http://mts.geobridge.org/GetCurrenciesOfPayment" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetCurrenciesOfPaymentAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ValidateBillPayment">
+      <soap:operation soapAction="http://mts.geobridge.org/ValidateBillPayment" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:ValidateBillPaymentAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetOrderStatus">
+      <soap:operation soapAction="http://mts.geobridge.org/GetOrderStatus" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetOrderStatusAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPdfPaymentReceipt">
+      <soap:operation soapAction="http://mts.geobridge.org/GetPdfPaymentReceipt" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetPdfPaymentReceiptAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetActiveCountries">
+      <soap:operation soapAction="http://mts.geobridge.org/GetActiveCountries" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetActiveCountriesAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPartnerBalance">
+      <soap:operation soapAction="http://mts.geobridge.org/GetPartnerBalance" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetPartnerBalanceAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPaymentsByDate">
+      <soap:operation soapAction="http://mts.geobridge.org/GetPaymentsByDate" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetPaymentsByDateAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="mtsSoap12" type="tns:mtsSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetTypesOfPayment">
+      <soap12:operation soapAction="http://mts.geobridge.org/GetTypesOfPayment" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetTypesOfPaymentAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetErrorList">
+      <soap12:operation soapAction="http://mts.geobridge.org/GetErrorList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetErrorListAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateNewOrder">
+      <soap12:operation soapAction="http://mts.geobridge.org/CreateNewOrder" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:CreateNewOrderAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateNewPayment">
+      <soap12:operation soapAction="http://mts.geobridge.org/CreateNewPayment" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:CreateNewPaymentAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRatesAndCosts">
+      <soap12:operation soapAction="http://mts.geobridge.org/GetRatesAndCosts" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetRatesAndCostsAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPaymentLocations">
+      <soap12:operation soapAction="http://mts.geobridge.org/GetPaymentLocations" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetPaymentLocationsAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetOrderDetails">
+      <soap12:operation soapAction="http://mts.geobridge.org/GetOrderDetails" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetOrderDetailsAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCancelationByCancelDate">
+      <soap12:operation soapAction="http://mts.geobridge.org/GetCancelationByCancelDate" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetCancelationByCancelDateAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetClientAccountChangesByDate">
+      <soap12:operation soapAction="http://mts.geobridge.org/GetClientAccountChangesByDate" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetClientAccountChangesByDateAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCurrencyTypesOfPayment">
+      <soap12:operation soapAction="http://mts.geobridge.org/GetCurrencyTypesOfPayment" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetCurrencyTypesOfPaymentAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateOrder">
+      <soap12:operation soapAction="http://mts.geobridge.org/UpdateOrder" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:UpdateOrderAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCurrenciesOfPayment">
+      <soap12:operation soapAction="http://mts.geobridge.org/GetCurrenciesOfPayment" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetCurrenciesOfPaymentAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ValidateBillPayment">
+      <soap12:operation soapAction="http://mts.geobridge.org/ValidateBillPayment" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:ValidateBillPaymentAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetOrderStatus">
+      <soap12:operation soapAction="http://mts.geobridge.org/GetOrderStatus" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetOrderStatusAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPdfPaymentReceipt">
+      <soap12:operation soapAction="http://mts.geobridge.org/GetPdfPaymentReceipt" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetPdfPaymentReceiptAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetActiveCountries">
+      <soap12:operation soapAction="http://mts.geobridge.org/GetActiveCountries" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetActiveCountriesAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPartnerBalance">
+      <soap12:operation soapAction="http://mts.geobridge.org/GetPartnerBalance" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetPartnerBalanceAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPaymentsByDate">
+      <soap12:operation soapAction="http://mts.geobridge.org/GetPaymentsByDate" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetPaymentsByDateAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="mts">
+    <wsdl:port name="mtsSoap" binding="tns:mtsSoap">
+      <soap:address location="http://test.pontualmt.net:8080/PontualAPI/mts.asmx" />
+    </wsdl:port>
+    <wsdl:port name="mtsSoap12" binding="tns:mtsSoap12">
+      <soap12:address location="http://test.pontualmt.net:8080/PontualAPI/mts.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
